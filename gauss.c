@@ -21,15 +21,13 @@ int eliminate(Matrix *mat, Matrix *b){
         for(j=i+1; j<mat->r; j++)
         {
             mnoznik = mat->data[j][i] / mat->data[i][i];
-            printf("%f\n", mnoznik);
             for(k=0; k<mat->c; k++)
-                mat->data[j][k]-= mnoznik * mat->data[i][k];
+            {
+                mat->data[j][k] -= mnoznik * mat->data[i][k];
+            }
+            b->data[j][0] -= mnoznik * b->data[i][0];
         }
     }
-
-
-
-
-		return 0;
+    return 0;
 }
 
