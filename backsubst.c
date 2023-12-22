@@ -5,10 +5,6 @@
  * Zwraca 2 - błąd nieprawidłowych rozmiarów macierzy
  */
 int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
-				/**
-				 * Tutaj należy umieścić właściwą implemntację.
-				 */
-
 				int i,j;
 				if (mat->r != mat->c) return 2;
 				for (i = mat->r-1; i >= 0; i--) {
