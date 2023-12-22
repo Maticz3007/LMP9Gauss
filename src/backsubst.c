@@ -6,7 +6,7 @@
  */
 int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
 				int i,j;
-				if (mat->r != mat->c) return 2;
+				if (mat->c != b->r) return 2;
 				for (i = mat->r-1; i >= 0; i--) {
 					if (mat->data[i][i] == 0) return 1;
 					b->data[i][0] *= (1/mat->data[i][i]);
